@@ -36,7 +36,7 @@ const html = () => {
 
 // Scripts
 const scripts = () => {
-  return gulp.src('source/js/script.js')
+  return gulp.src('source/js/scripts.js')
   .pipe(terser())
   .pipe(gulp.dest('build/js'))
   .pipe(browser.stream());
@@ -55,11 +55,11 @@ const copyImages = () => {
 
 // WebP
 const createWebp = () => {
-  return gulp.src('source/img/catalog/*.{png,jpg}')
+  return gulp.src('source/img/content/**/*.{png,jpg}')
   .pipe(squoosh({
     webp:{}
   }))
-  .pipe(gulp.dest('build/img/catalog'))
+  .pipe(gulp.dest('build/img/content'))
 }
 
 // SVG
